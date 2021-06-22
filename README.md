@@ -8,9 +8,10 @@ MQTT(Message Queueing Telemetry Transport)는 2016년 국제 표준화 된 (ISO 
 MQTT의 발행-구독 메시징 패턴은 오로지 브로커를 통해서만 통신할 수 있으며 개설된 Topic에 메시지를 발행하면 해당 Topic을 구독하는 클라이언트들에게 메시지를 발행할 수 있다.
 그렇기에 일대일, 혹은 일대다의 통신이 모두 가능하다.
 <p align="center"><img src="https://miro.medium.com/max/1170/1*lKWgSNIYc1Pil5FFoAHMkA.png" /></p>
-## 구현 방법
-pub 서버는 발행 서버 
-sub 서버는 구독 서버
+
+### 구현 방법
+pub 서버는 브로커 
+sub 서버는 발행,구독 서버 (실시간 채팅 뷰)
 
 메시지 브로커를 pub에서 구현 하고 sub는 vue단에서 sockjs , stomp client 를 통해 pub 서버에 메시지 브로커를 구독한뒤 데이터를 조회한다.
 sub 서버에서는 실시간 채팅을 위해 pub 서버에 pub/* 로 데이터를 보내주고(데이터 발행) , pub 브로커에 데이터가 가면 다시 sub로 데이터를 조회하면 실시간 채팅 구현 완료
